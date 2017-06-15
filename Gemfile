@@ -31,14 +31,27 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "react_on_rails", "8.0.0"
-
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
+gem 'font-awesome-rails'
+gem 'jquery-rails'
+gem 'cancancan', '~> 2.0'
+gem 'devise', '~> 4.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'faker', github: 'stympy/faker'
 end
 
 group :development do
+  gem 'interactive_editor'
+  gem 'awesome_print'
+  gem 'hirb'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
