@@ -1,8 +1,10 @@
 import ReactOnRails from 'react-on-rails';
 
-import HelloWorldApp from './HelloWorldApp';
+import HelloWorld from '../components/HelloWorld';
+import NavBar from '../components/NavBar';
 
 // This is how react_on_rails can see the HelloWorld in the browser.
 ReactOnRails.register({
-  HelloWorldApp,
+  HelloWorld,
+  NavBar,
 });
