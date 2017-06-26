@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{10,}$/i
+  # VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}\z/i
 
-  has_one :address 
+  has_one :address
+  accepts_nested_attributes_for :address
 
   has_secure_password
 
@@ -11,6 +12,6 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: VALID_EMAIL_REGEX
-  validates :password_digest, format: VALID_PASSWORD_REGEX
+  # validates :password_digest, format: VALID_PASSWORD_REGEX
 
 end
