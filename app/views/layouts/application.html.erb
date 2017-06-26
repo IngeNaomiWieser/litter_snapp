@@ -11,6 +11,49 @@
 
   <body>
     <%= react_component("NavBar") %>
+
+    <nav class="container-fluid navbar navbar-fixed-top navbar-custom">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapse_button" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav one-line">
+          <li> <%= link_to 'Home', home_path, class: 'navbar-brand' %> </li>
+          <li> <%= link_to 'About', about_path %></li>
+          <li> <%= link_to 'Map', map_path %></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li id="hello"> Hello <%= link_to current_user.first_name, edit_user_path(current_user)  %> ! </li>
+            <li> <%= link_to 'Log out', sessions_path %></li>
+          <% else %>
+            <li> <%= link_to 'Log in', new_session_path %> </li>
+            <li> <%= link_to 'Sign Up', new_user_path %> </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <br><br>
+
+
+
+
+
+
+
+    <% if flash[:notice] %>
+      <div class='alert alert-success'><%= flash[:notice] %></div>
+    <% elsif flash[:alert] %>
+      <div class='alert alert-danger'><%= flash[:alert] %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

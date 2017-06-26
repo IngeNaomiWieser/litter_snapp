@@ -1,13 +1,12 @@
 .navbar-custom {
     background-color: #169cb7;
+    display: inline-block;
 }
 
-.navbar-custom ul {
-  width: 100%
-}
+
 
 .navbar-nav li a {
-  color: black;
+  color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
 }
@@ -20,30 +19,25 @@
     background-color: #grey;
 }
 
-// .navbar-custom .navbar-nav > li > a {
-//     color:#fff;
-// }
-//
-// .navbar-custom .navbar-nav > .active > a {
-//     color: #ffffff;
-//     background-color:transparent;
-// }
+.icon-bar {
+ background-color: white;
+}
 
-// .navbar-custom .navbar-nav > li > a:hover,
-// .navbar-custom .navbar-nav > li > a:focus,
-// .navbar-custom .navbar-nav > .active > a:hover,
-// .navbar-custom .navbar-nav > .active > a:focus,
-// .navbar-custom .navbar-nav > .open >a {
-//     text-decoration: none;
-//     background-color: #33aa33;
-// }
-//
-// .navbar-custom .navbar-brand {
-//     color:#eeeeee;
-// }
-// .navbar-custom .navbar-toggle {
-//     background-color:#eeeeee;
-// }
-// .navbar-custom .icon-bar {
-//     background-color:#33aa33;
-// }
+#hello {
+ color: white;
+ font-size: 20px;
+ display: flex;
+ margin-top: 12px;
+ margin-left: 15px;
+}
+
+#hello a {
+ padding: 0px 10px 0px 10px;
+ margin-top: 4px;
+}
+
+.navbar-brand {
+ color: white;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 20px;
+}
