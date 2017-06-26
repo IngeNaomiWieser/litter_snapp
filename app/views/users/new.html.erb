@@ -1,0 +1,59 @@
+<div class="container">
+
+  <h3>Sign in please</h3>
+
+  <div class="well">
+    <%= form_for(setup_user(@user)) do |f|  %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+
+      <%= f.fields_for :address do |ff| %>
+        <div class="form-group">
+          <%= ff.label :postal_code %>
+          <%= ff.text_field :postal_code, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= ff.label :province %>
+          <%= ff.select(:province, options_for_select([
+            ['Alberta (AB)', 'AB'],
+            ['Britisch Columbia (BC)', 'BC'],
+            ['Manitoba (MB)', 'MB'],
+            ['New Brunswick (NB)', '(NB)'],
+            ['Newfoundland and Labrador (NL)', 'NL'],
+            ['NorthWest Territories (NT)', 'NT'],
+            ['Nova Scotia (NS)', 'NS'],
+            ['Nunavut (NU)', 'NU'],
+            ['Ontario (ON)', 'ON'],
+            ['Prince Edward Island (PE)', 'PE'],
+            ['Quebec (QC)', 'QC'],
+            ['Saskatchewan (SK)', 'SK'],
+            ['Yukon (YT)', 'YT']], 'BC')) %>
+        </div>
+        <div class="form-group">
+          <%= ff.label :country %>
+          <%= ff.text_field :country, class: 'form-control' %>
+        </div>
+      <% end %>
+
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
