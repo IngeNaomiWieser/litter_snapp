@@ -2,7 +2,13 @@ class WelcomeController < ApplicationController
 
   def index
 
-  end 
+  end
+
+  def about
+  end
+
+  def map
+  end
 
 
 end
