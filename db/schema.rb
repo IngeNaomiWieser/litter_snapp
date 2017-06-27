@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170626165905) do
   end
 
   add_foreign_key "addresses", "users"
+
   add_foreign_key "joins", "events"
   add_foreign_key "joins", "users"
   add_foreign_key "litters", "users"
