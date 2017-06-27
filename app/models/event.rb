@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
-  has_many :joins, dependent: :destroy
-  has_many :joiners, through: :joins, source: :user
+  has_many :user_events, dependent: :destroy
+  has_many :users, through: :user_events 
+
 
 end

@@ -1,4 +1,4 @@
-class Join < ApplicationRecord
+class UserEvent < ApplicationRecord
   belongs_to :user
   belongs_to :event
 

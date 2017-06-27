@@ -5,8 +5,9 @@ class User < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
 
-  has_many :joins, dependent: :destroy
-  has_many :joined_events, through: :joins, source: :event
+  has_many :user_events, dependent: :destroy
+  has_many :events, through: :user_events
+
 
   has_secure_password
 

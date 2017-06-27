@@ -1,6 +1,6 @@
-class CreateJoins < ActiveRecord::Migration[5.1]
+class CreateUserEvents < ActiveRecord::Migration[5.1]
   def change
-    create_table :joins do |t|
+    create_table :user_events do |t|
       t.boolean :is_organizer
       t.references :user, foreign_key: true, index: true
       t.references :event, foreign_key: true, index: true
