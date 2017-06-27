@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626165905) do
+ActiveRecord::Schema.define(version: 20170627032456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,20 @@ ActiveRecord::Schema.define(version: 20170626165905) do
     t.index ["user_id"], name: "index_litters_on_user_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "latitude"
+    t.string "longitude"
+    t.string "radius"
+    t.bigint "litter_id"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_locations_on_event_id"
+    t.index ["litter_id"], name: "index_locations_on_litter_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
   create_table "user_events", force: :cascade do |t|
     t.boolean "is_organizer"
     t.bigint "user_id"
@@ -66,6 +80,9 @@ ActiveRecord::Schema.define(version: 20170626165905) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "litters", "users"
+  add_foreign_key "locations", "events"
+  add_foreign_key "locations", "litters"
+  add_foreign_key "locations", "users"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end
