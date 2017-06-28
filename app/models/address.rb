@@ -8,6 +8,12 @@ class Address < ApplicationRecord
   geocoded_by :full_street_address   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 
+  validates :line_1, presence: true 
+  validates :postal_code, presence: true
+  validates :city, presence: true
+  validates :province, presence: true
+  validates :country, presence: true
+
   def full_street_address
     [self.line_1, self.city, self.postal_code, self.province, self.country].reject(&:blank?).join(", ")
   end

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find params[:id]
   end
-  
+
 
   def update
   end
@@ -40,7 +40,9 @@ class UsersController < ApplicationController
       :password,
       :password_confirmation,
       address_attributes: [
+        :line_1,
         :postal_code,
+        :city,
         :province,
         :country
       ]
