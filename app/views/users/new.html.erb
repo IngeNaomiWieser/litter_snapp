@@ -24,11 +24,18 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
-
       <%= f.fields_for :address do |ff| %>
+        <div class="form-group">
+          <%= ff.label :line_1 %>
+          <%= ff.text_field :line_1, class: 'form-control' %>
+        </div>
         <div class="form-group">
           <%= ff.label :postal_code %>
           <%= ff.text_field :postal_code, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= ff.label :city %>
+          <%= ff.text_field :city, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= ff.label :province %>
@@ -45,14 +52,13 @@
             ['Prince Edward Island (PE)', 'PE'],
             ['Quebec (QC)', 'QC'],
             ['Saskatchewan (SK)', 'SK'],
-            ['Yukon (YT)', 'YT']], 'BC')) %>
+            ['Yukon (YT)', 'YT']], 'YT')) %>
         </div>
         <div class="form-group">
           <%= ff.label :country %>
-          <%= ff.text_field :country, class: 'form-control' %>
+          <%= ff.text_field :country, value: 'Canada', class: 'form-control' %>
         </div>
       <% end %>
-
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
