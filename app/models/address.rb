@@ -8,7 +8,6 @@ class Address < ApplicationRecord
   geocoded_by :full_street_address   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 
-  validates :line_1, presence: true 
   validates :postal_code, presence: true
   validates :city, presence: true
   validates :province, presence: true
