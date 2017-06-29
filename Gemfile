@@ -36,7 +36,11 @@ gem 'bootstrap_form'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'cancancan', '~> 2.0'
+
 gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
