@@ -26,7 +26,6 @@ class User < ApplicationRecord
   def geocode
     address = self.address.full_street_address
     result = Geocoder.search(address).first
-
     process_geocoded_result(result) if result
   end
 
