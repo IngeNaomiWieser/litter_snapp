@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-
+  include ActionView::Helpers::AssetUrlHelper
   def index
 
   end
@@ -8,10 +8,22 @@ class WelcomeController < ApplicationController
   end
 
   def map
-    @user_location = current_user.location if user_signed_in? 
+    @user_location = current_user.location if user_signed_in?
     #have a function that checks if a user is logged in. If yes, it sets an instance variable to the location (lat and long) of the user.
     # then in your view file you will have to add the markers to the instance variable
+    @litters = Litter.where(cleaned: false)
   end
 
+  private
 
+  def litter_markers
+    Litter.where(cleaned: false).limit(2).map do |litter|
+      {
+        lat: litter.location.latitude,
+        lng: litter.location.longitude,
+
+        infowindow: "hello!"
+      }
+    end
+  end
 end

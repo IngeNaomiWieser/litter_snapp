@@ -5,22 +5,35 @@
 <script>
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers([
+    home = handler.addMarkers([
       {
         "lat": "<%= @user_location&.latitude %>",
         "lng": "<%= @user_location&.longitude %>",
         "picture": {
-          "url": "<%= image_url("home.png") %>",
+          "url": "<%= image_url("bluehome.png") %>",
           "width":  32,
           "height": 32
         },
         "infowindow": "hello!"
       }
     ]);
-    handler.bounds.extendWith(markers);
+    litterMarkers = handler.addMarkers([
+      <% @litters.each do |litter| %>
+        {
+          lat: "<%=litter.location.latitude %>",
+          lng: "<%=litter.location.longitude %>",
+          "picture": {
+            "url": "<%= image_url("pinky.png") %>",
+            "width":  28,
+            "height": 28
+          },
+          infowindow: "hello!"
+        },
+      <% end %>
+    ]);
+    // handler.bounds.extendWith(home);
     // handler.fitMapToBounds();
-    handler.getMap().setZoom(11);
-    handler.map.centerOn({ lat: 49.2357, lng: -122.964825 });
+    handler.getMap().setZoom(12);
+    handler.map.centerOn({ lat: 49.2700, lng: -123.100000 });
   });
-
 </script>
