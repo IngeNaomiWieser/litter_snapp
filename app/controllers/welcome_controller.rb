@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-  include ActionView::Helpers::AssetUrlHelper
   def index
 
   end
@@ -13,17 +12,3 @@ class WelcomeController < ApplicationController
     # then in your view file you will have to add the markers to the instance variable
     @litters = Litter.where(cleaned: false)
   end
-
-  private
-
-  def litter_markers
-    Litter.where(cleaned: false).limit(2).map do |litter|
-      {
-        lat: litter.location.latitude,
-        lng: litter.location.longitude,
-
-        infowindow: "hello!"
-      }
-    end
-  end
-end
