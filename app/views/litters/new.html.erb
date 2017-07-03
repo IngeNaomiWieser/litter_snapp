@@ -1,0 +1,28 @@
+<br><br>
+<div class='container'>
+  <%= form_for @litter, html: { multipart: true } do |f| %>
+  <% if @litter.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@litter.errors.count, "error") %> prohibited this picture of litter from being saved:</h2>
+
+        <ul>
+        <% @litter.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :amount %><br>
+      <%= f.text_field :amount %>
+    </div>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
