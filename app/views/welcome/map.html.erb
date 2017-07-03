@@ -20,8 +20,8 @@
     litterMarkers = handler.addMarkers([
       <% @litters.each do |litter| %>
         {
-          lat: "<%=litter.location.latitude %>",
-          lng: "<%=litter.location.longitude %>",
+          lat: "<%=litter.location&.latitude %>",
+          lng: "<%=litter.location&.longitude %>",
           "picture": {
             "url": "<%= image_url("pinky.png") %>",
             "width":  28,
@@ -34,6 +34,6 @@
     // handler.bounds.extendWith(home);
     // handler.fitMapToBounds();
     handler.getMap().setZoom(12);
-    handler.map.centerOn({ lat: 49.2700, lng: -123.100000 });
+    handler.map.centerOn({ lat: 49.2700, lng: -123.110000 });
   });
 </script>

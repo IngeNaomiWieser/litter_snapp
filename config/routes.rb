@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get :destroy, on: :collection
   end
 
+  resources :litters, only: [:new, :create, :show]
 
 end
