@@ -12,3 +12,4 @@ class WelcomeController < ApplicationController
     # then in your view file you will have to add the markers to the instance variable
     @litters = Litter.where(cleaned: false)
   end
+end
