@@ -15,7 +15,6 @@ const MapSideBarApp = (props, _railsContext) => (
   <Provider store={configureStore(props)}>
     <div>
       <MapSideBarContainer />
-      <EventListContainer />
     </div>
   </Provider>
 );

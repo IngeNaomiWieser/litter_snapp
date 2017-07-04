@@ -15,11 +15,16 @@ class WelcomeController < ApplicationController
   end
 
   private
+
   def props
     {
       tab: 'index',
-      planned_events: event_list(Event.where('planned_date >= ?', Date.today).to_a),
-      past_events: event_list(Event.where('planned_date < ?', Date.today).to_a)
+      planned_events: event_list(
+        Event.where('planned_date >= ?', Date.today).order(planned_date: :asc).to_a
+      ),
+      past_events: event_list(
+        Event.where('planned_date < ?', Date.today).order(planned_date: :desc).to_a
+      )
     }
   end
 
