@@ -8,4 +8,5 @@ class Event < ApplicationRecord
   def organizers
     self.user_events.where(is_organizer: true)
   end
+
 end

@@ -4,7 +4,11 @@
 		<div>
 			<%=form_tag event_path do %>
 				<div class="join-btn-div">
-					<%= submit_tag "Join this Event!", class: 'btn btn-info join-btn' %>
+					<% if @user_event.present? %>
+						<%= link_to "'Unjoin' Event", event_user_event_path(@event, @user_event), method: :delete, class: 'btn btn-info join-btn' %>
+					<% else %>
+						<%= link_to "Join this Event!", event_user_events_path(@event), method: :post, class: 'btn btn-info join-btn' %>
+					<% end %>
 				</div>
 			<% end %>
 		</div>
@@ -57,7 +61,7 @@
 			<h4>People joined: <%= @event.users.count %> </h4>
 		</div>
 
-		<div id="map"></div>
+		<div id="map" class='map-event'></div>
 		<script>
 			var trash = {'lat': 49.263921, 'lng': -122.971534};
 
