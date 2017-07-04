@@ -1,41 +1,42 @@
 <!-- <div class='map-container'>
   <div id="map" style='width: 100%; height: calc(100vh - 40px);'></div>
 </div> -->
+<%= react_component("Map", prerender: false) %>
 <%= react_component("MapSideBarApp", props: @props, prerender: false) %>
 
 
 <script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    home = handler.addMarkers([
-      {
-        "lat": "<%= @user_location&.latitude %>",
-        "lng": "<%= @user_location&.longitude %>",
-        "picture": {
-          "url": "<%= image_url("marker_icons/bluehome.png") %>",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "hello!"
-      }
-    ]);
-    litterMarkers = handler.addMarkers([
-      <% @litters.each do |litter| %>
-        {
-          lat: "<%=litter.location&.latitude %>",
-          lng: "<%=litter.location&.longitude %>",
-          "picture": {
-            "url": "<%= image_url("marker_icons/pinky.png") %>",
-            "width":  28,
-            "height": 28
-          },
-          infowindow: "hello!"
-        },
-      <% end %>
-    ]);
-    // handler.bounds.extendWith(home);
-    // handler.fitMapToBounds();
-    handler.getMap().setZoom(12);
-    handler.map.centerOn({ lat: 49.2700, lng: -123.110000 });
-  });
+  // handler = Gmaps.build('Google');
+  // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  //   home = handler.addMarkers([
+  //     {
+  //       "lat": "<%= @user_location&.latitude %>",
+  //       "lng": "<%= @user_location&.longitude %>",
+  //       "picture": {
+  //         "url": "<%= image_url("marker_icons/bluehome.png") %>",
+  //         "width":  32,
+  //         "height": 32
+  //       },
+  //       "infowindow": "hello!"
+  //     }
+  //   ]);
+  //   litterMarkers = handler.addMarkers([
+  //     <% @litters.each do |litter| %>
+  //       {
+  //         lat: "<%=litter.location&.latitude %>",
+  //         lng: "<%=litter.location&.longitude %>",
+  //         "picture": {
+  //           "url": "<%= image_url("marker_icons/pinky.png") %>",
+  //           "width":  28,
+  //           "height": 28
+  //         },
+  //         infowindow: "hello!"
+  //       },
+  //     <% end %>
+  //   ]);
+  //   // handler.bounds.extendWith(home);
+  //   // handler.fitMapToBounds();
+  //   handler.getMap().setZoom(12);
+  //   handler.map.centerOn({ lat: 49.2700, lng: -123.110000 });
+  // });
 </script>
