@@ -1,5 +1,5 @@
 .navbar-custom {
-    background-color: #169cb7;
+    background-color: #48a610;
     display: inline-block;
 }
 
@@ -9,12 +9,12 @@
 
 .navbar-nav li a {
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-size: 20px;
 }
 
 .navbar-nav li a:hover {
-  background-color: #169cb7;
+  background-color: #48a610;
 }
 
 .navbar-nav li a:focus {
@@ -23,6 +23,10 @@
 
 .icon-bar {
  background-color: white;
+}
+
+.navbar-header button {
+  margin-right: 43px;
 }
 
 #hello {
@@ -38,8 +42,9 @@
  margin-top: 4px;
 }
 
-.navbar-brand {
+#navbar-brand {
  color: white;
- font-family: 'Open Sans', sans-serif;
- font-size: 20px;
+ font-family: 'Baloo Bhaina', cursive;
+ font-size: 24px;
+ margin-top: 2px;
 }

@@ -19,23 +19,38 @@
    margin: 0px;
  }
 
+.container {
+  min-height: calc(100vh - 100px)
+}
+
 .flash {
   margin-bottom: 0px;
 }
 
+
 // footer
 
 .footer {
-  background-color: #169cb7;
+  background-color: #48a610;
   height: 100px;
   text-align: center;
   padding-top: 25px;
   font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Questrial', sans-serif;
+  width: 100vw;
+  // position: relative;
+  // margin-top: -100px;
+  // clear: both;
+  //  position: absolute;
+  //  top: 100%;
+  //  right: 0%;
+  //  left: 0%;
+   z-index: 10;
+  //  margin-top: -100px;
 }
 
 .footer i {
-  color: #169cb7;
+  color: #48a610;
   background-color: white;
   padding: 8px;
   border-radius: 5px;
@@ -45,13 +60,13 @@
 
 #copyright-icon {
   color: white;
-  background-color: #169cb7;
+  background-color: #48a610;
   font-size: 12px;
   padding: 0px;
 }
 
 .footer-text  {
-  margin-top: 7px;
+  // margin-top: 7px;
   color: white;
   font-size: 12px;
 }
@@ -76,4 +91,12 @@
 
 .social-media-icons {
   margin-right: 25px;
+}
+
+// flash messages
+.flash {
+  position: absolute;
+  top: 5%;
+  z-index: 300;
+  width: 100%;
 }
