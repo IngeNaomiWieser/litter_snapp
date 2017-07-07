@@ -27,15 +27,3 @@ div.container-fluid {
   min-height: calc(100vh - 100px);        // HOW YOU GET THE FOOTER TO STAY AT THE RIGHT PLACE !!!
   z-index: -1;
 }
-
-.flash {
-  margin-bottom: 0px;
-}
-
-// flash messages
-.flash {
-  position: absolute;
-  top: 5%;
-  z-index: 300;
-  width: 100%;
-}
