@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   after_save :geocode          # auto-fetch coordinates
 
+  def full_name
+    "#{first_name} #{last_name}".titleize
+  end
+
   private
 
   def geocode
@@ -35,6 +39,5 @@ class User < ApplicationRecord
     location.longitude = result.longitude
     location.save
   end
-
 
 end

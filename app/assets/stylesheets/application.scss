@@ -18,3 +18,12 @@
  body {
    margin: 0px;
  }
+
+.container {
+  min-height: calc(100vh - 100px);      // HOW YOU GET THE FOOTER TO STAY AT THE RIGHT PLACE !!!
+}
+
+div.container-fluid {
+  min-height: calc(100vh - 100px);        // HOW YOU GET THE FOOTER TO STAY AT THE RIGHT PLACE !!!
+  z-index: -1;
+}

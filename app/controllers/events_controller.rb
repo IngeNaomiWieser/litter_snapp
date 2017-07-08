@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def show
+    @event = Event.find params[:id]
+    @user_event = @event.user_events.find_by(user: current_user)
+  end
 
   def new
     @event = Event.new
