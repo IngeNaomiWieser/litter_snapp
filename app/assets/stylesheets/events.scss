@@ -10,7 +10,7 @@
 }
 
 #myCarousel ol li {
-	background-color: #169cb7;
+	background-color: #48a610;
 	border-color: white;
 	width: 15px;
 	height: 15px;
@@ -36,7 +36,7 @@
 
 .join-btn-div {
 	position: absolute;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Questrial', sans-serif;
 	top: 75%;
 	left: calc(50% - 101px);
 	z-index: 1;
@@ -45,11 +45,11 @@
 .join-btn {
 	font-size: 26px;
 	color: white;
-	background-color:  #169cb7;
+	background-color:  #48a610;
 }
 .join-btn:hover {
 	font-size: 26px;
-	color: #169cb7;
+	color: #48a610;
 	background-color:  yellow;
 }
 
@@ -58,8 +58,8 @@
 }
 
 .details {
-	color:  #169cb7;
-	font-family: 'Open Sans', sans-serif;
+	color:  #48a610;
+	font-family: 'Questrial', sans-serif;
 	// text-align: center;
 	padding-left: 50px;
 }
@@ -73,7 +73,7 @@
 	height: 54vh;
 	width: 95%;
 	box-sizing: border-box;
-	border: medium #169cb7 solid;
+	border: medium #48a610 solid;
 	position: absolute;
 	top: 103%;
 	margin-top: 2px;
