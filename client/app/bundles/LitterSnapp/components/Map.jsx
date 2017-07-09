@@ -1,18 +1,22 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import MapSideBar from './MapSideBar'
 
 export default class Map extends Component {
   constructor(props) {
     super(props);
     console.log(this.props);
+    this.state = {
+      google_map: {}
+    };
   }
 
-
   componentDidMount() {
-    this.map = new google.maps.Map(this.refs.map, {
+    this.googleMap = new google.maps.Map(this.refs.map, {
       center: {lat: 49.2700, lng: -123.110000},
       zoom: 12
     });
+
 
     const litter_icon = {
       url: "http://localhost:3000/images/blue_pin.png",
@@ -30,7 +34,7 @@ export default class Map extends Component {
     this.markers = this.props.litters.map((litter) => {
       new google.maps.Marker({
         position: {lat: litter.lat, lng: litter.lng},
-        map: this.map,
+        map: this.googleMap,
         icon: litter_icon,
         zIndex: 5
       });
@@ -38,10 +42,13 @@ export default class Map extends Component {
 
     this.homeMarker = new google.maps.Marker({
       position: {lat: this.props.user_location.latitude, lng: this.props.user_location.longitude},
-      map: this.map,
+      map: this.googleMap,
       icon: home_icon,
       zIndex: 10
     });
+
+    console.log(this);
+    this.setState({ google_map: this.googleMap });
   }
 
   render() {
@@ -53,7 +60,16 @@ export default class Map extends Component {
     }
 
     return (
-      <div className="map-container" ref='map' style={style}>
+      <div>
+        <div className="map-container" ref='map' style={style}>
+        </div>
+        <MapSideBar
+          tab={this.props.tab}
+          planned_events={this.props.planned_events}
+          past_events={this.props.past_events}
+          updateTab={this.props.updateTab}
+          google_map={this.state.google_map}
+        />
       </div>
     );
   }
@@ -62,5 +78,8 @@ export default class Map extends Component {
 Map.propTypes = {
   litters: PropTypes.array,
   tab: PropTypes.string.isRequired,
-  user_location: PropTypes.object
+  user_location: PropTypes.object,
+  updateTab: PropTypes.func.isRequired,
+  planned_events: PropTypes.array.isRequired,
+  past_events: PropTypes.array.isRequired,
 };

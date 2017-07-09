@@ -4,14 +4,20 @@ import EventItem from './EventItem';
 import PastEventItem from './PastEventItem';
 
 export default class EventList extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+
   renderList() {
     if(this.props.tab == 'past_index'){
       return this.props.events.map((event) => {
-        return <PastEventItem key={event.id} event={event} />;
+        return <PastEventItem key={event.id} event={event} google_map={this.props.google_map}/>;
       });
     } else {
       return this.props.events.map((event) => {
-        return <EventItem key={event.id} event={event} />;
+        return <EventItem key={event.id} event={event} google_map={this.props.google_map} />;
       });
     }
   }
@@ -31,7 +37,8 @@ export default class EventList extends Component {
 EventList.propTypes = {
   events: PropTypes.array,
   past_events: PropTypes.array,
-  tab: PropTypes.string.isRequired
+  tab: PropTypes.string.isRequired,
+  google_map: PropTypes.object
 };
 
 // export default EventList;

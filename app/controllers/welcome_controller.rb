@@ -14,7 +14,6 @@ class WelcomeController < ApplicationController
     # then in your view file you will have to add the markers to the instance variable
     @litters = Litter.where(cleaned: false)
     @map_props = map_props
-    @sidebar_props = sidebar_props
   end
 
   private
@@ -23,12 +22,7 @@ class WelcomeController < ApplicationController
     {
       litters: litter_props(Litter.where(cleaned: false)),
       tab: 'index',
-      user_location: current_user&.location
-    }
-  end
-
-  def sidebar_props
-    {
+      user_location: current_user&.location,
       tab: 'index',
       planned_events: event_list(
         Event.where('planned_date >= ?', Date.today).order(planned_date: :asc).to_a

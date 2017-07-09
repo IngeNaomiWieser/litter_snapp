@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactOnRails from 'react-on-rails';
 
-const EventForm = () => (
+const EventForm = ({google_map}) => (
   <div className='event-form'>
     <p>Feel like cleaning up some litter, but there are no clean up events near you?</p>
     <p>Then why not organize an event yourself?</p>
@@ -50,8 +50,7 @@ const EventForm = () => (
 );
 
 // MapSideBar.propTypes = {
-//   tab: PropTypes.string.isRequired,
-//   updateTab: PropTypes.func.isRequired,
+//    google_map: PropTypes.object
 // };
 
 export default EventForm;

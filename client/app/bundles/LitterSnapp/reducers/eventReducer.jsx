@@ -26,6 +26,10 @@ const user_location = (state = '', action) => {
   return state;
 };
 
-const eventReducer = combineReducers({ tab, planned_events, past_events, litters, user_location });
+const google_map = (state = {}, action) => {
+  return state;
+};
+
+const eventReducer = combineReducers({ tab, planned_events, past_events, litters, user_location, google_map });
 
 export default eventReducer;
