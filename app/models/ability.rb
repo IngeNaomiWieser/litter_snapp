@@ -10,6 +10,13 @@ class Ability
       user == e.organizers.first.user
     end
 
+
+    can [:create, :destroy], UserEvent do |u|
+      !u.is_organizer
+    end
+
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

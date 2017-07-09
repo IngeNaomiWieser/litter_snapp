@@ -15,8 +15,12 @@ class UserEventsController < ApplicationController
   def destroy
     event = Event.find params[:event_id]
     user_event = current_user.user_events.find params[:id]
-    user_event.destroy
-    redirect_to event, notice: 'You successfully cancelled your participation for this event.'
+    if can? :destroy, user_event
+      user_event.destroy
+      redirect_to event, notice: 'You successfully cancelled your participation for this event.'
+    else
+      redirect_to event, alert: "As the organizer you cannot bail from your own event."
+    end
   end
 
 

@@ -12,19 +12,23 @@
   	</div>
 		<div class="three_circles col-xs-offset-2 col-xs-8">
 			<div class="joined_circle col-xs-2">
-				<h5>PEOPLE JOINED </h5> <%= @event.users.count %>
+				<h5>People Joined </h5> <%= @event.users.count %>
 			</div>
       <%=form_tag event_path do %>
         <div class="join-btn col-xs-2">
-          <% if @user_event.present? %>
-            <h5> <%= link_to "Cancel Event", event_user_event_path(@event, @user_event), method: :delete %> </h5>
-          <% else %>
-            <h5> <%= link_to "Join this Event", event_user_events_path(@event), method: :post %> </h5>
+					<% unless @user_event&.is_organizer %>
+	          <% if @user_event.present? %>
+	            <h5> <%= link_to "Change RSVP", event_user_event_path(@event, @user_event), method: :delete %> </h5>
+	          <% else %>
+	            <h5> <%= link_to "Join this Event", event_user_events_path(@event), method: :post %> </h5>
+	          <% end %>
+					<% else %>
+						<h5> <%= link_to "Edit your Event", edit_event_path(@event) %> </h5>
           <% end %>
         </div>
       <% end %>
 			<div class="litter_items_circle col-xs-2">
-				<h5>LITTER ITEMS </h5> 24
+				<h5>Litter Items </h5> 24
 			</div>
 		</div>
 	</div>
@@ -33,10 +37,10 @@
 		<h3 class="col-xs-12 col-sm-offset-2 col-sm-8"> ABOUT THIS EVENT </h3>
 		<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
 			<br>
-			<h4> EVENT: Woolwich Ave Park Clean Up !</h4> <%# @event.title %>
+			<h4> EVENT: <%= @event.title %> </h4>
 			<h4> DATE: <%= @event.planned_date %> </h4>
 			<h4> TIME: <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
-			<h4> LOCATION: 2250 Woolwich Ave, Burnaby, BC V5B 4E2 </h4> <%# @event.location.address %>
+			<h4> LOCATION: <%= @event.address.street_address %> </h4>
 			<br>
 			<h4> Number of reported litter in the area: 24 </h4>
 			<h4>People joined so far: <%= @event.users.count %> </h4>
@@ -47,7 +51,7 @@
 			<h5> Email organizer: <%= @event.organizers.first.user.email %> </h5>
 			<br>
 			<h4> Notes from the organizer:</h4>
-			<p id="notes"> Hey everyone ! I found quite some litter in this area and I would love to make this park green again. I found materials that can be a hazard for animals and small children, plus it doesn't look very appealing right now. It would be great if you would like to join me this Saturday to clean it all up in approximately 1 hour. Hope to see you all then! Greetings, Inge </p> <%# @event.notes %>
+			<p id="notes"> <%= @event.notes %> </p>
 		</div>
 	</div>
 
@@ -100,4 +104,5 @@
 				handler.map.centerOn(trash);
 			});
 		</script>
+
 </div>
