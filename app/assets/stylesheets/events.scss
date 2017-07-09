@@ -5,6 +5,8 @@
 	margin: 0px;
 }
 
+
+// EVENT SHOW PAGE
 .container-fluid {
 	padding: 0px;
 	border-radius: 5px;
@@ -16,7 +18,7 @@
 
 .leaf_image_div img {
 	width: 100%;
-	margin-top: 40px;
+	// margin-top: 40px;
 	padding: 0px;
 }
 
@@ -110,4 +112,10 @@ div.details h4 {
 	border: thin #03b421 solid;
 	box-sizing: border-box;
 	margin: 50px 0px 50px 15px;
+}
+
+// EVENT EDIT PAGE
+
+#notes_tag input {
+	font-size: 20px;
 }

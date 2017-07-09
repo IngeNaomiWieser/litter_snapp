@@ -33,7 +33,7 @@
 		<h3 class="col-xs-12 col-sm-offset-2 col-sm-8"> ABOUT THIS EVENT </h3>
 		<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
 			<br>
-			<h4> EVENT: Woolwich Ave Park Clean Up !</h4>
+			<h4> EVENT: Woolwich Ave Park Clean Up !</h4> <%# @event.title %>
 			<h4> DATE: <%= @event.planned_date %> </h4>
 			<h4> TIME: <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
 			<h4> LOCATION: 2250 Woolwich Ave, Burnaby, BC V5B 4E2 </h4> <%# @event.location.address %>
@@ -47,7 +47,7 @@
 			<h5> Email organizer: <%= @event.organizers.first.user.email %> </h5>
 			<br>
 			<h4> Notes from the organizer:</h4>
-			<p id="notes"> Hey everyone ! I found quite some litter in this area and I would love to make this park green again. I found materials that can be a hazard for animals and small children, plus it doesn't look very appealing right now. It would be great if you would like to join me this Saturday to clean it all up in approximately 1 hour. Hope to see you all then! Greetings, Inge </p>
+			<p id="notes"> Hey everyone ! I found quite some litter in this area and I would love to make this park green again. I found materials that can be a hazard for animals and small children, plus it doesn't look very appealing right now. It would be great if you would like to join me this Saturday to clean it all up in approximately 1 hour. Hope to see you all then! Greetings, Inge </p> <%# @event.notes %>
 		</div>
 	</div>
 

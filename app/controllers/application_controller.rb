@@ -22,4 +22,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user #, :user_signed_in
 
+  def authorize_organizer
+    head :unauthorized unless current_user.user_events.is_organizer? 
+  end
 end
