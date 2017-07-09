@@ -18,6 +18,14 @@ const past_events = (state = [], action) => {
   return state;
 };
 
-const eventReducer = combineReducers({ tab, planned_events, past_events });
+const litters = (state = [], action) => {
+  return state;
+};
+
+const user_location = (state = '', action) => {
+  return state;
+};
+
+const eventReducer = combineReducers({ tab, planned_events, past_events, litters, user_location });
 
 export default eventReducer;

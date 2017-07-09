@@ -1,6 +1,9 @@
 .map-container {
   display: inline-block;
-  width: 100%;
+  max-width: calc(100vw - 200px);
+  width: 75%;
+  min-width: calc(100vw - 300px);
+  margin-top: 53px;
 }
 
 .mapsidebar {
