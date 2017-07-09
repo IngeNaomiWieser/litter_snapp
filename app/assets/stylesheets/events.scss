@@ -7,75 +7,107 @@
 
 .container-fluid {
 	padding: 0px;
+	border-radius: 5px;
 }
 
-#myCarousel ol li {
-	background-color: #48a610;
-	border-color: white;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	margin-right: 10px;
+.leaf_image_div {
+	padding: 0px;
 }
 
-#carousel{
- border: black solid thin;
- padding: 0px;
- margin-top: 20px;
- // margin-left: 10px;
+.leaf_image_div img {
+	width: 100%;
+	margin-top: 40px;
+	padding: 0px;
 }
 
-.img-responsive {
-	display: flex;
-	max-width: 100%;
-	height: 100vh;
-	// width: 1200px;
-	background-size: cover;
-	margin-right: 0px !important;
-}
-
-.join-btn-div {
+div.details {
 	position: absolute;
+	top: 20%;
+	text-align: center;
+	color:  white;
 	font-family: 'Questrial', sans-serif;
-	top: 75%;
-	left: calc(50% - 101px);
-	z-index: 1;
+	border-radius: 2%;
+	padding: 15px 0px 15px 0px;
+}
+
+div.details h1 {
+	font-weight: bold;
+	color: white;
+	font-size: 3vw;
+}
+
+div.details h4 {
+	font-weight: bold;
+	font-size: 2vw;
+}
+
+.three_circles {
+	// border: red thick solid;
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+	position: absolute;
+	top: 72%;
+	max-height: 20vh;;
+}
+
+.three_circles div {
+	background-color:rgba(0, 51, 0, 0.7);
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-size: 2vw;
+	padding: 10px;
+	width: 150px !important;
+	height: 150px !important;
+	padding: 30px 0;
 }
 
 .join-btn {
-	font-size: 26px;
+	height: 100%;
+}
+.join-btn a {
 	color: white;
-	background-color:  #48a610;
-}
-.join-btn:hover {
-	font-size: 26px;
-	color: #48a610;
-	background-color:  yellow;
-}
-
-.details_and_map {
-	 margin-top: 15px;
-}
-
-.details {
-	color:  #48a610;
-	font-family: 'Questrial', sans-serif;
-	// text-align: center;
-	padding-left: 50px;
-}
-
-.details h1 {
-	padding-right: 40px;
-	font-weight: bold;
+	font-size: 2vw;
 	text-align: center;
 }
+
+.join-btn a:hover {
+	text-decoration: none;
+  color: #03b421;
+}
+
+.join-btn a:focus {
+	text-decoration: none;
+  color: #03b421;
+}
+
+.summary {
+	color: #03b421;
+}
+
+.summary h3 {
+	margin-top: 40px;
+}
+
+.summary_left {
+	padding-bottom: 29px;
+}
+
+#notes {
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+#carousel{
+ height: 46vh;
+ margin-top: 50px;
+}
+
 .event-map {
-	height: 54vh;
-	width: 95%;
+	height: calc(42vh - 4px);
 	box-sizing: border-box;
-	border: medium #48a610 solid;
-	position: absolute;
-	top: 103%;
-	margin-top: 2px;
-	margin-bottom: 20px;
+	border: thin #03b421 solid;
+	box-sizing: border-box;
+	margin: 50px 0px 50px 15px;
 }
