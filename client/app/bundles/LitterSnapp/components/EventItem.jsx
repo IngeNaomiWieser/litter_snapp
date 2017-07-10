@@ -49,6 +49,7 @@ export default class EventItem extends Component {
         className='event-list-item'
         onMouseEnter={(e) => this.animateMarker()}
       >
+        <p>{this.props.event.title}</p>
         <p>{this.props.event.planned_date}</p>
         <p>{this.props.event.planned_time}</p>
         <p>Joined: {this.props.event.joined}</p>

@@ -2,15 +2,12 @@
 
 	<div class="leaf_image_div col-xs-12">
 		<%= image_tag("free_pics/green_leafs") %>
-	  <div style="background-color:rgba(0, 51, 0, 0.7);" class="details col-xs-offset-3 col-xs-6">
-			<h1> Clean Up Event </h1>
-			<br>
+	  <div style="background-color:rgba(0, 51, 0, 0.7);" class="details col-xs-offset-4 col-xs-4">
+			<h1 class="text_clean_up_event"> Clean Up Event </h1>
 			<h4> <%= @event.planned_date %> at <%= @event.planned_time.to_time.utc.strftime("%H:%M") %> </h4>
-			<br>
-			<h4> 2250 Woolwich Ave </h4>
-			<h4> Burnaby, BC V5B 4E2 </h4> <%# @event.location.address %>
+			<h4> <%= @event.address.street_address %> </h4>
   	</div>
-		<div class="three_circles col-xs-offset-2 col-xs-8">
+		<div class="three_circles hidden-xs col-sm-offset-2 col-sm-8">
 			<div class="joined_circle col-xs-2">
 				<h5>People Joined </h5> <%= @event.users.count %>
 			</div>
@@ -34,23 +31,20 @@
 	</div>
 
 	<div class="summary">
-		<h3 class="col-xs-12 col-sm-offset-2 col-sm-8"> ABOUT THIS EVENT </h3>
+		<h3 class="col-xs-12 col-sm-offset-2 col-sm-10"> <%= @event.title %> </h3>
 		<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
+			<h4 class="black_color"> <span style="color:#03b421">Date:</span> <%= @event.planned_date %> </h4>
+			<h4 class="black_color"> <span style="color:#03b421">Time:</span> <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
+			<h4 class="black_color"> <span style="color:#03b421">Location:</span> <%= @event.address.street_address %> </h4>
 			<br>
-			<h4> EVENT: <%= @event.title %> </h4>
-			<h4> DATE: <%= @event.planned_date %> </h4>
-			<h4> TIME: <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
-			<h4> LOCATION: <%= @event.address.street_address %> </h4>
-			<br>
-			<h4> Number of reported litter in the area: 24 </h4>
-			<h4>People joined so far: <%= @event.users.count %> </h4>
+			<h4 class="black_color"> <span style="color:#03b421">Number of reported litter in the area:</span> 24 </h4>
+			<h4 class="black_color"> <span style="color:#03b421">Number of people that have joined so far:</span> <%= @event.users.count %> </h4>
 		</div>
-		<div class="summary_right col-xs-12 col-sm-4">
+		<div class="summary_right col-xs-12 col-sm-6">
+			<h4 class="green_color"> Organizer of this event: <span style="font-weight:bold; color:black"> <%= @event.organizers.first.user.full_name %> </span> </h4>
+			<h5 class="black_color"> <span style="color:#03b421">Email organizer:</span> <%= @event.organizers.first.user.email %> </h5>
 			<br>
-			<h4> Organizer of this event: <span style="font-weight:bold"> <%= @event.organizers.first.user.full_name %> </span> </h4>
-			<h5> Email organizer: <%= @event.organizers.first.user.email %> </h5>
-			<br>
-			<h4> Notes from the organizer:</h4>
+			<h4 style="margin:0px;"> Notes from the organizer:</h4>
 			<p id="notes"> <%= @event.notes %> </p>
 		</div>
 	</div>
@@ -67,15 +61,15 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<%= image_tag('/uploads/litter/image/124/20170529_194751.jpg', :class => "img-responsive carousel1")%>
+					<%= image_tag('/uploads/litter/image/238/litter10.jpg', :class => "carousel1")%>
 					</div>
 
 				<div class="item">
-					<%= image_tag('/uploads/litter/image/125/20170425_190321.jpg', :class => "img-responsive carousel1")%>
+					<%= image_tag('/uploads/litter/image/239/litter8.jpg', :class => "carousel1")%>
 				</div>
 
 				<div class="item">
-					<%= image_tag('/uploads/litter/image/118/20170425_190338.jpg', :class => "img-responsive carousel1")%>
+					<%= image_tag('/uploads/litter/image/244/litter19.jpg', :class => "carousel1")%>
 				</div>
 			</div>
 
