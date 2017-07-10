@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # get 'hello_world', to: 'hello_world#index'
+  get 'hello_world', to: 'hello_world#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :events, only: [:show, :edit, :update, :destroy] do
+  resources :events, except: [:index, :new] do
     resources :user_events, only: [:create, :destroy]
   end
 
@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index', as: 'home'
   get '/about', to: 'welcome#about'
   get '/map', to: 'welcome#map'
-
-
 
   resources :litters, only: [:new, :create, :show]
 

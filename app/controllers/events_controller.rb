@@ -1,13 +1,28 @@
 class EventsController < ApplicationController
+
   before_action :authenticate_user!, except: [:show]
-  before_action :find_event
+  before_action :find_event, except: [:create]
 
   def show
     @user_event = @event.user_events.find_by(user: current_user)
   end
 
-  def edit
+  def create
+    event = Event.new event_params
 
+    if params[:event][:location].present?
+      event.location = Location.new(latitude: params_latlng[0], longitude: params_latlng[1], radius: 0.5)
+    end
+
+    if event.save
+      UserEvent.create(user_id: current_user.id, event_id: event.id, is_organizer: true)
+      redirect_to event_path(event), notice: "You're AWESOME! Thanks for organizing an event"
+    else
+      redirect_to map_path
+    end
+  end
+
+  def edit
   end
 
   def update
@@ -31,6 +46,20 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def event_params
+    params.require(:event).permit(
+      :planned_time,
+      :planned_date,
+    )
+  end
+
+  def params_latlng
+    params.require(:event).permit(
+      :location,
+    )
+    params[:event][:location].split(', ')
+  end
 
   def find_event
     @event = Event.find params[:id]
