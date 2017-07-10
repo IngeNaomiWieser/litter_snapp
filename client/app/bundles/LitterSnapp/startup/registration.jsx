@@ -1,10 +1,12 @@
 import ReactOnRails from 'react-on-rails';
 
-import HelloWorld from '../components/HelloWorld';
-import NavBar from '../components/NavBar';
+import HelloWorldApp from './HelloWorldApp';
+// import MapSideBarApp from './MapSideBarApp';
+// import Map from '../components/Map';
+import MapApp from './MapApp';
+
 
 // This is how react_on_rails can see the HelloWorld in the browser.
 ReactOnRails.register({
-  HelloWorld,
-  NavBar,
+  MapApp,
 });
