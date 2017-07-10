@@ -11133,7 +11133,7 @@ button.close {
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans");
 /* line 1, /Users/inge/bootcamp/litter_snapp/app/assets/stylesheets/navbar.scss */
 .navbar-custom {
-  background-color: #48a610;
+  background-color: #03b421;
   display: inline-block;
 }
 
@@ -11146,7 +11146,7 @@ button.close {
 
 /* line 12, /Users/inge/bootcamp/litter_snapp/app/assets/stylesheets/navbar.scss */
 .navbar-nav li a:hover {
-  background-color: #48a610;
+  background-color: #03b421;
 }
 
 /* line 16, /Users/inge/bootcamp/litter_snapp/app/assets/stylesheets/navbar.scss */

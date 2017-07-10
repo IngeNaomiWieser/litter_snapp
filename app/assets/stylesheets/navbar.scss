@@ -1,6 +1,6 @@
 .navbar-custom {
-    background-color: #48a610;
-    display: block;
+    background-color: #03b421;
+    display: inline-block;
 }
 
 .navbar-right {
@@ -15,11 +15,11 @@
 }
 
 .navbar-nav li a:hover {
-  background-color: #48a610;
+  background-color: #03b421;
 }
 
 .navbar-nav li a:focus {
-    background-color: #48a610;
+    background-color: #03b421;
 }
 
 .icon-bar {
@@ -28,6 +28,10 @@
 
 .navbar-header button {
   margin-right: 43px;
+}
+
+.edit_nav {
+  margin-left: 85px;
 }
 
 #hello {

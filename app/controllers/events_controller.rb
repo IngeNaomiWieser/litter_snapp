@@ -1,13 +1,10 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+
+  before_action :authenticate_user!, except: [:show]
+  before_action :find_event, except: [:create]
 
   def show
-    @event = Event.find params[:id]
     @user_event = @event.user_events.find_by(user: current_user)
-  end
-
-  def new
-    @event = Event.new
   end
 
   def create
@@ -22,6 +19,29 @@ class EventsController < ApplicationController
       redirect_to map_path, notice: "You're AWESOME! Thanks for organizing an event"
     else
       redirect_to map_path
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    event_params = params.require(:event).permit(:title, :planned_date, :planned_time, :notes)
+    if !(can? :update, @event)
+      redirect_to event_path(@event), alert: "You are not allowed to change this event."
+    elsif @event.update(event_params)
+      redirect_to event_path(@event), notice: "Your event was updated"
+    else
+      render :edit, alert: "Something went wrong..."
+    end
+  end
+
+  def destroy
+    if can? :destroy, @event
+      @event.destroy
+      redirect_to home_path, notice: "Your event was cancelled"
+    else
+      redirect to event_path(@event), alert: "You are not allowed to cancel this event"
     end
   end
 
@@ -40,4 +60,9 @@ class EventsController < ApplicationController
     )
     params[:event][:location].split(', ')
   end
+
+  def find_event
+    @event = Event.find params[:id]
+  end
+
 end

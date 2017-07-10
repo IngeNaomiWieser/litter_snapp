@@ -12,7 +12,10 @@
       <li> <%= link_to 'Litter sn<span style="font-style:italic">App</span>'.html_safe, home_path, id: 'navbar-brand' %> </li>
       <li> <%= link_to 'About', about_path %></li>
       <li> <%= link_to 'Map', map_path %></li>
-
+      <% if can? :edit, @event %>
+    		 <li class="edit_nav"> <%= link_to "Edit your Event", edit_event_path(@event) %> </li>
+    		 <li> <%= link_to "Cancel your Event", event_path(@event), method: :delete, data: { confirm: 'Are you sure you want to cancel this event?'} %> </li>
+    	<% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>

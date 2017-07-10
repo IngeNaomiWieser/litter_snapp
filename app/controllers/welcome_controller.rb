@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
+
   include ActionView::Helpers::AssetUrlHelper
 
   def index
-
   end
 
   def about

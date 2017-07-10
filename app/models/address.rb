@@ -1,5 +1,6 @@
 class Address < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
+  belongs_to :event, optional: true
 
   geocoded_by :full_street_address   # can also be an IP address
 
@@ -10,6 +11,10 @@ class Address < ApplicationRecord
 
   def full_street_address
     [self.line_1, self.city, self.postal_code, self.province, self.country].reject(&:blank?).join(", ")
+  end
+
+  def street_address
+    [self.line_1, self.city].reject(&:blank?).join(", ")
   end
 
 end
