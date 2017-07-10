@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702233408) do
+ActiveRecord::Schema.define(version: 20170709191635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170702233408) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_addresses_on_event_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -33,6 +35,8 @@ ActiveRecord::Schema.define(version: 20170702233408) do
     t.boolean "complete"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "notes"
   end
 
   create_table "litters", force: :cascade do |t|

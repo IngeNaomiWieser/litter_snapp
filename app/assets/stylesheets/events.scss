@@ -5,6 +5,8 @@
 	margin: 0px;
 }
 
+
+// EVENT SHOW PAGE
 .container-fluid {
 	padding: 0px;
 	border-radius: 5px;
@@ -16,7 +18,7 @@
 
 .leaf_image_div img {
 	width: 100%;
-	margin-top: 40px;
+	// margin-top: 40px;
 	padding: 0px;
 }
 
@@ -33,12 +35,12 @@ div.details {
 div.details h1 {
 	font-weight: bold;
 	color: white;
-	font-size: 3vw;
+	font-size: 3.5vw;
 }
 
 div.details h4 {
 	font-weight: bold;
-	font-size: 2vw;
+	font-size: 1.5vw;
 }
 
 .three_circles {
@@ -56,11 +58,15 @@ div.details h4 {
 	border-radius: 50%;
 	text-align: center;
 	color: white;
-	font-size: 2vw;
+	font-size: 1.5vw;
 	padding: 10px;
 	width: 150px !important;
 	height: 150px !important;
 	padding: 30px 0;
+}
+
+.three_circles div h5 {
+	font-size: 1.5vw;
 }
 
 .join-btn {
@@ -68,7 +74,7 @@ div.details h4 {
 }
 .join-btn a {
 	color: white;
-	font-size: 2vw;
+	font-size: 1.5vw;
 	text-align: center;
 }
 
@@ -110,4 +116,10 @@ div.details h4 {
 	border: thin #03b421 solid;
 	box-sizing: border-box;
 	margin: 50px 0px 50px 15px;
+}
+
+// EVENT EDIT PAGE
+
+#notes_tag input {
+	font-size: 20px;
 }
