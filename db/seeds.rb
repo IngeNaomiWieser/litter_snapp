@@ -27,7 +27,15 @@ def random_user_id
   User.ids.sample    # gives me a random user
 end
 
+def random_image
+  ['litter1.jpg', 'litter2.jpg', 'litter3.jpg', 'litter4.jpg', 'litter5.jpg', 'litter6.jpg', 'litter7.jpg', 'litter8.jpg', 'litter9.jpg', 'litter10.jpg', 'litter11.jpg', 'litter12.jpg', 'litter13.jpg', 'litter14.jpg', 'litter15.jpg', 'litter16.jpg', 'litter17.jpg', 'litter18.jpg', 'litter19.jpg', 'litter20.jpg', 'litter21.jpg'].sample
+end
+
 100.times do
-  litter = Litter.create amount: rand(1..5), cleaned: false, user_id: random_user_id
+  litter = Litter.create(amount: rand(1..5),
+                          cleaned: false,
+                          user_id: random_user_id,
+                          image: File.open("#{Rails.root}/public/images/#{random_image}")
+                        )
   geocode(litter)
 end
