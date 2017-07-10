@@ -5,9 +5,10 @@ import MapSideBar from './MapSideBar'
 export default class Map extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+
     this.state = {
-      google_map: {}
+      google_map: {},
+      clickLatLng: {}
     };
   }
 
@@ -17,6 +18,9 @@ export default class Map extends Component {
       zoom: 12
     });
 
+    google.maps.event.addListener(this.googleMap, 'click', (e) => {
+      this.setState({clickLatLng: e.latLng});
+    })
 
     const litter_icon = {
       url: "http://localhost:3000/images/blue_pin.png",
@@ -47,7 +51,6 @@ export default class Map extends Component {
       zIndex: 10
     });
 
-    console.log(this);
     this.setState({ google_map: this.googleMap });
   }
 
@@ -69,6 +72,7 @@ export default class Map extends Component {
           past_events={this.props.past_events}
           updateTab={this.props.updateTab}
           google_map={this.state.google_map}
+          clickLatLng={this.state.clickLatLng}
         />
       </div>
     );

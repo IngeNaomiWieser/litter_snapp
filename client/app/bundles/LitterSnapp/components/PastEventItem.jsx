@@ -13,6 +13,8 @@ const PastEventItem = ({ event }) => (
 
 PastEventItem.propTypes = {
   event: PropTypes.object.isRequired,
+  google_map: PropTypes.object,
+  tab: PropTypes.string
 };
 
 export default PastEventItem;

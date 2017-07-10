@@ -13,11 +13,19 @@ export default class EventList extends Component {
   renderList() {
     if(this.props.tab == 'past_index'){
       return this.props.events.map((event) => {
-        return <PastEventItem key={event.id} event={event} google_map={this.props.google_map}/>;
+        return <PastEventItem
+                  key={event.id}
+                  event={event}
+                  google_map={this.props.google_map}
+                  tab={this.props.tab} />;
       });
     } else {
       return this.props.events.map((event) => {
-        return <EventItem key={event.id} event={event} google_map={this.props.google_map} />;
+        return <EventItem
+                  key={event.id}
+                  event={event}
+                  google_map={this.props.google_map}
+                  tab={this.props.tab} />;
       });
     }
   }

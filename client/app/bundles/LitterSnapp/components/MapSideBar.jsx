@@ -29,7 +29,7 @@ export default class MapSideBar extends Component {
           <EventList events={this.props.past_events} tab={this.props.tab} google_map={this.props.google_map} />
         }
         { this.props.tab == 'create' &&
-          <EventForm google_map={this.props.google_map} />
+          <EventForm google_map={this.props.google_map} clickLatLng={this.props.clickLatLng} />
         }
         { this.props.tab == 'index' &&
           <EventList events={this.props.planned_events} tab={this.props.tab} google_map={this.props.google_map} />
@@ -44,7 +44,8 @@ MapSideBar.propTypes = {
   updateTab: PropTypes.func.isRequired,
   planned_events: PropTypes.array.isRequired,
   past_events: PropTypes.array.isRequired,
-  google_map: PropTypes.object
+  google_map: PropTypes.object,
+  clickLatLng: PropTypes.object
 };
 
 // export default MapSideBar;

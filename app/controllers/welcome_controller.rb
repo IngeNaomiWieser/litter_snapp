@@ -40,7 +40,7 @@ class WelcomeController < ApplicationController
         planned_time: e.planned_time.strftime("%I:%M %p"),
         lat: e.location&.latitude,
         lng: e.location&.longitude,
-        url: home_path,
+        url: event_path(e),
         joined: e.users.count
       }
     }
