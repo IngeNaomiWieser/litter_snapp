@@ -34,13 +34,28 @@ export default class Map extends Component {
       origin: new google.maps.Point(0,0)
     };
 
-    // Add markers
+  // Add markers
     this.markers = this.props.litters.map((litter) => {
-      new google.maps.Marker({
+
+      // Set content for infobox
+      const infoContent = `<div><img src=${litter.img_url}/></div`;
+
+      // Create actual infobox
+      const infowindow = new google.maps.InfoWindow({
+        content: infoContent
+      });
+
+      // Create marker
+      const marker = new google.maps.Marker({
         position: {lat: litter.lat, lng: litter.lng},
         map: this.googleMap,
         icon: litter_icon,
         zIndex: 5
+      });
+
+      // Add click event to open infobox
+      marker.addListener('click', function() {
+        infowindow.open(this.googleMap, marker);
       });
     });
 

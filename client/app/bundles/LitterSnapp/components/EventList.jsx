@@ -6,7 +6,6 @@ import PastEventItem from './PastEventItem';
 export default class EventList extends Component {
   constructor(props) {
     super(props);
-
   }
 
 
@@ -19,7 +18,7 @@ export default class EventList extends Component {
                   google_map={this.props.google_map}
                   tab={this.props.tab} />;
       });
-    } else {
+    } else if (this.props.tab == 'index') {
       return this.props.events.map((event) => {
         return <EventItem
                   key={event.id}
