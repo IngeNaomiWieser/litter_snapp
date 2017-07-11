@@ -87,7 +87,7 @@
 
 	<div id="map" class='event-map col-xs-12 col-sm-4'></div>
 		<script>
-			var trash = {'lat': 49.263921, 'lng': -122.971534};
+			var trash = {'lat': <%= @event.location.latitude %>, 'lng': <%= @event.location.longitude %>}; 
 
 			handler = Gmaps.build('Google');
 			handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
