@@ -32,5 +32,6 @@ class Event < ApplicationRecord
       province: result[5] ? result[5]['long_name'] : 'BC',
       country: result[6] ? result[6]['long_name'] : 'Canada'
     )
+    self.title ||= "Clean Up Event at #{self.address.street_address}"
   end
 end
