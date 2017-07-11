@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   def destroy
     if can? :destroy, @event
       @event.destroy
-      redirect_to home_path, notice: "Your event was cancelled"
+      redirect_to map_path, notice: "Your event was cancelled"
     else
       redirect to event_path(@event), alert: "You are not allowed to cancel this event"
     end

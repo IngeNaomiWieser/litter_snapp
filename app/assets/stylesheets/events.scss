@@ -5,11 +5,10 @@
 	margin: 0px;
 }
 
-
 // EVENT SHOW PAGE
 .container-fluid {
 	padding: 0px;
-	border-radius: 5px;
+	// border-radius: 5px;
 }
 
 .leaf_image_div {
@@ -18,8 +17,17 @@
 
 .leaf_image_div img {
 	width: 100%;
-	// margin-top: 40px;
 	padding: 0px;
+}
+
+.summary {
+	margin-bottom: 35px;
+	border: red thick solid;
+	z-index: 5000
+}
+
+.text_clean_up_event {
+	padding-bottom: 20px;
 }
 
 div.details {
@@ -44,7 +52,6 @@ div.details h4 {
 }
 
 .three_circles {
-	// border: red thick solid;
 	display: flex;
 	justify-content: space-between;
 	z-index: 2;
@@ -98,11 +105,18 @@ div.details h4 {
 
 .summary_left {
 	padding-bottom: 29px;
+	// border: blue solid thin;
+}
+
+.summary_right {
+	// border: blue solid thin;
+	margin-bottom: 100px;
 }
 
 #notes {
 	font-size: 14px;
 	padding-top: 10px;
+	color: black;
 }
 
 #carousel{
@@ -111,11 +125,11 @@ div.details h4 {
 }
 
 .event-map {
-	height: calc(42vh - 4px);
+	height: calc(32vh - 7px);
 	box-sizing: border-box;
 	border: thin #03b421 solid;
 	box-sizing: border-box;
-	margin: 50px 0px 50px 15px;
+	margin: 50px 0px 0px 15px;
 }
 
 // EVENT EDIT PAGE
@@ -132,4 +146,12 @@ div.details h4 {
 .new_event .form-group input {
 	padding: 0 4px;
 	font-size: 14px;
+}
+
+.black_color {
+	color: black;
+}
+
+.green_color {
+	color: #03b421;
 }

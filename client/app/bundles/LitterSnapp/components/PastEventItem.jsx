@@ -3,6 +3,7 @@ import React from 'react';
 
 const PastEventItem = ({ event }) => (
   <li key={event.id} className='event-list-item'>
+    <p>{this.props.event.title}</p>  
     <p>{event.planned_date}</p>
     <p>{event.planned_time}</p>
     <p>Joined: {event.joined}</p>

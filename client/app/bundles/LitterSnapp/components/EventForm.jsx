@@ -46,7 +46,7 @@ export default class EventForm extends Component {
             name='authenticity_token'
             value={ReactOnRails.authenticityToken()}
           />
-          <div className='form-group'>
+          <div className='form-group event_form_item'>
             <label htmlFor="event_planned_date">When?</label>
             <input
               className='form-control'
@@ -55,7 +55,7 @@ export default class EventForm extends Component {
               id='event_planned_date'
             />
           </div>
-          <div className='form-group'>
+          <div className='form-group event_form_item'>
             <label htmlFor="event_planned_time">At what time?</label>
             <input
               className='form-control'
@@ -64,7 +64,7 @@ export default class EventForm extends Component {
               id='event_planned_date'
             />
           </div>
-          <div className='form-group'>
+          <div className='form-group event_form_item'>
             <label htmlFor="event_planned_time">Where?</label>
             <input
               className='form-control'
@@ -79,7 +79,7 @@ export default class EventForm extends Component {
             type='submit'
             name='commit'
             value='Submit'
-            className='btn btn-primary'
+            className='btn btn-success'
             data-disable-with='Submit'
           />
         </form>

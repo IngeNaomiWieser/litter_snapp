@@ -35,6 +35,7 @@ class WelcomeController < ApplicationController
 
   def event_list(events) #takes array of event objects
     events.map{|e| {
+        title: e.title,
         id: e.id,
         planned_date: e.planned_date,
         planned_time: e.planned_time.strftime("%I:%M %p"),

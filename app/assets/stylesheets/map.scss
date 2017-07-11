@@ -1,9 +1,10 @@
 .map-container {
   display: inline-block;
-  max-width: calc(100vw - 200px);
+  max-width: calc(87vw - 200px);
   width: 75%;
   min-width: calc(100vw - 300px);
   margin-top: 53px;
+  margin-bottom: -8px;
 }
 
 .mapsidebar {
@@ -13,13 +14,14 @@
   right: 0px;
   min-width: 200px;
   width: 25%;
-  max-width: 300px;
+  max-width: 285px;
   // height: 75vh;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 158px);
   background-color: white;
   padding: 0px;
   // border-radius: 20px;
   // border: 5px solid limegreen;
+  font-family: 'Questrial', sans-serif;
 }
 
 ul.mapsidebar-tabs {
@@ -34,14 +36,18 @@ ul.mapsidebar-tabs {
   list-style: none;
   width: 33%;
   height: 25px;
-  padding: 4px 3px;
-  background-color: lightsteelblue;
+  padding: 1px 3px;
+  color: white;
+  background-color: rgba(0, 62, 0, 0.4);
+  font-weight: 900;
+  font-size: 18px;
 }
 .mapsidebar-tabs li:hover {
   cursor: pointer;
 }
 .mapsidebar li.active-item {
   background-color: white;
+  color: #03b421;
 }
 // .mapsidebar-tabs li:first-child {
 //   border-top-left-radius: 15px;
