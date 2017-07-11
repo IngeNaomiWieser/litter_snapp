@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
 	<div class="leaf_image_div col-xs-12">
-		<%= image_tag("free_pics/green_leafs") %>
+		<%= image_tag("free_pics/green_leafs-min") %>
 	  <div style="background-color:rgba(0, 51, 0, 0.7);" class="details col-xs-offset-4 col-xs-4">
 			<h1 class="text_clean_up_event"> Clean Up Event </h1>
 			<h4> <%= @event.planned_date %> at <%= @event.planned_time.to_time.utc.strftime("%H:%M") %> </h4>
@@ -87,7 +87,7 @@
 
 	<div id="map" class='event-map col-xs-12 col-sm-4'></div>
 		<script>
-			var trash = {'lat': <%= @event.location.latitude %>, 'lng': <%= @event.location.longitude %>}; 
+			var trash = {'lat': <%= @event.location.latitude %>, 'lng': <%= @event.location.longitude %>};
 
 			handler = Gmaps.build('Google');
 			handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
