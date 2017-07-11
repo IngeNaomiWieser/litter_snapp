@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 export default class EventItem extends Component {
   constructor(props) {
     super(props)
-
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,7 +26,6 @@ export default class EventItem extends Component {
         });
       // }
     }
-
   }
 
 
@@ -49,11 +47,13 @@ export default class EventItem extends Component {
         className='event-list-item'
         onMouseEnter={(e) => this.animateMarker()}
       >
-        <p>{this.props.event.title}</p>
-        <p>{this.props.event.planned_date}</p>
-        <p>{this.props.event.planned_time}</p>
-        <p>Joined: {this.props.event.joined}</p>
-        <a href={this.props.event.url}>Details</a>
+        <a href={this.props.event.url}>
+          <div>
+            <p>{this.props.event.title}</p>
+            <p>{this.props.event.planned_date} @ {this.props.event.planned_time}</p>
+            <p>Joined: {this.props.event.joined}</p>
+          </div>
+        </a>
         <hr/>
       </li>
     )

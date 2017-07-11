@@ -52,7 +52,7 @@ class WelcomeController < ApplicationController
         id: l.id,
         lat: l.location.latitude,
         lng: l.location.longitude,
-        img: l.image_url(:medium),
+        img_url: l.image.medium.url,
         amount: l.amount
       }
     }
