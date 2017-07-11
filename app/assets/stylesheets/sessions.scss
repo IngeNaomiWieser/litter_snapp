@@ -1,0 +1,39 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-family: 'Questrial', sans-serif;
+  color: #03b421;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.log_in_form {
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  color: #03b421;
+}
+
+.form-group input {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid darkgrey;
+  font-size: 20px;
+  border-radius: 0px;
+}
+
+.btn-default {
+  font-size: 17px;
+  background-color: #03b421;
+  border: 0;
+  color: white;
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.row {
+  margin: 0px;
+}

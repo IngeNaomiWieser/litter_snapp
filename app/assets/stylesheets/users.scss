@@ -1,0 +1,29 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign_in_form form div input {
+  font-size: 20px;
+  border-radius: 0px;
+}
+
+.sign_in_form {
+  font-size: 20px;
+  color: grey;
+
+}
+
+#user_address_attributes_country {
+  color: rgb(153, 153, 153);
+}
+
+#user_address_attributes_province {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid darkgrey;
+  font-size: 20px;
+  border-radius: 0px;
+  color: rgb(153, 153, 153);
+}

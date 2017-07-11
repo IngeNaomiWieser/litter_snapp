@@ -1,0 +1,157 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+	margin: 0px;
+}
+
+// EVENT SHOW PAGE
+.container-fluid {
+	padding: 0px;
+	// border-radius: 5px;
+}
+
+.leaf_image_div {
+	padding: 0px;
+}
+
+.leaf_image_div img {
+	width: 100%;
+	padding: 0px;
+}
+
+.summary {
+	margin-bottom: 35px;
+	border: red thick solid;
+	z-index: 5000
+}
+
+.text_clean_up_event {
+	padding-bottom: 20px;
+}
+
+div.details {
+	position: absolute;
+	top: 20%;
+	text-align: center;
+	color:  white;
+	font-family: 'Questrial', sans-serif;
+	border-radius: 2%;
+	padding: 15px 0px 15px 0px;
+}
+
+div.details h1 {
+	font-weight: bold;
+	color: white;
+	font-size: 3.5vw;
+}
+
+div.details h4 {
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+.three_circles {
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+	position: absolute;
+	top: 72%;
+	max-height: 20vh;;
+}
+
+.three_circles div {
+	background-color:rgba(0, 51, 0, 0.7);
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-size: 1.5vw;
+	padding: 10px;
+	width: 150px !important;
+	height: 150px !important;
+	padding: 30px 0;
+}
+
+.three_circles div h5 {
+	font-size: 1.5vw;
+}
+
+.join-btn {
+	height: 100%;
+}
+.join-btn a {
+	color: white;
+	font-size: 1.5vw;
+	text-align: center;
+}
+
+.join-btn a:hover {
+	text-decoration: none;
+  color: #03b421;
+}
+
+.join-btn a:focus {
+	text-decoration: none;
+  color: #03b421;
+}
+
+.summary {
+	color: #03b421;
+}
+
+.summary h3 {
+	margin-top: 40px;
+}
+
+.summary_left {
+	padding-bottom: 29px;
+	// border: blue solid thin;
+}
+
+.summary_right {
+	// border: blue solid thin;
+	margin-bottom: 100px;
+}
+
+#notes {
+	font-size: 14px;
+	padding-top: 10px;
+	color: black;
+}
+
+#carousel{
+ height: 46vh;
+ margin-top: 50px;
+}
+
+.event-map {
+	height: calc(32vh - 7px);
+	box-sizing: border-box;
+	border: thin #03b421 solid;
+	box-sizing: border-box;
+	margin: 50px 0px 0px 15px;
+}
+
+// EVENT EDIT PAGE
+
+#notes_tag input {
+	font-size: 20px;
+}
+
+.event-form {
+	padding: 0 10px;
+	font-size: 12px;
+}
+
+.new_event .form-group input {
+	padding: 0 4px;
+	font-size: 14px;
+}
+
+.black_color {
+	color: black;
+}
+
+.green_color {
+	color: #03b421;
+}

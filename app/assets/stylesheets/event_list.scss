@@ -1,0 +1,32 @@
+ul.event-list {
+  padding: 0;
+  margin: 0;
+  max-height: calc(100vh - 158px);
+  // overflow: scroll;
+  font-size: 18px;
+}
+
+li.event-list-item {
+  list-style: none;
+  padding: 15px 15px 0px 15px;
+}
+
+li.event-list-item p {
+    margin-bottom: 5px;
+}
+li.event-list-item p:first-child {
+  color: #03b421;
+  font-weight: bold;
+}
+
+li.event-list-item a {
+  color: #03b421;
+}
+
+li.event-list-item a:hover {
+  text-decoration: none
+}
+
+hr {
+  margin: 10px 0px 0px 0px;
+}

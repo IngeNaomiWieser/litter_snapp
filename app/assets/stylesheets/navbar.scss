@@ -1,0 +1,55 @@
+.navbar-custom {
+    background-color: #03b421;
+    display: inline-block;
+}
+
+.navbar-right {
+  margin-right: 8px;
+}
+
+.navbar-nav li a {
+  color: white;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-nav li a:hover {
+  background-color: #03b421;
+}
+
+.navbar-nav li a:focus {
+    background-color: #03b421;
+}
+
+.icon-bar {
+ background-color: white;
+}
+
+.navbar-header button {
+  margin-right: 43px;
+}
+
+.edit_nav {
+  margin-left: 85px;
+}
+
+#hello {
+ color: white;
+ font-size: 20px;
+ display: flex;
+ margin-top: 12px;
+ margin-left: 15px;
+}
+
+#hello a {
+ padding: 0px 10px 0px 10px;
+ margin-top: 4px;
+}
+
+#navbar-brand {
+ color: white;
+ font-family: 'Baloo Bhaina', cursive;
+ font-size: 24px;
+ margin-top: 2px;
+}
