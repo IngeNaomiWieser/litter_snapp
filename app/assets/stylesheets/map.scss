@@ -16,7 +16,7 @@
   width: 25%;
   max-width: 285px;
   // height: 75vh;
-  height: calc(100vh - 158px);
+  height: calc(100vh - 50px);
   background-color: white;
   padding: 0px;
   // border-radius: 20px;
@@ -47,7 +47,7 @@ ul.mapsidebar-tabs {
 }
 .mapsidebar li.active-item {
   background-color: white;
-  color: #03b421;
+  color: #1e953a;
 }
 // .mapsidebar-tabs li:first-child {
 //   border-top-left-radius: 15px;

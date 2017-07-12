@@ -1,6 +1,8 @@
 class Litter < ApplicationRecord
   belongs_to :user
   has_one :location, dependent: :destroy
+  has_many :event_litters, dependent: :destroy
+  has_many :events, through: :event_litters
 
   mount_uploader :image, ImageUploader
 

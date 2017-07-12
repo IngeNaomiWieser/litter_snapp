@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709191635) do
+ActiveRecord::Schema.define(version: 20170712035242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20170709191635) do
     t.bigint "event_id"
     t.index ["event_id"], name: "index_addresses_on_event_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "event_litters", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "litter_id"
+    t.index ["event_id"], name: "index_event_litters_on_event_id"
+    t.index ["litter_id"], name: "index_event_litters_on_litter_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -84,6 +91,8 @@ ActiveRecord::Schema.define(version: 20170709191635) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "event_litters", "events"
+  add_foreign_key "event_litters", "litters"
   add_foreign_key "litters", "users"
   add_foreign_key "locations", "events"
   add_foreign_key "locations", "litters"

@@ -1,8 +1,12 @@
+div.event-list {
+  height: calc(100vh - 50px);
+}
+
 ul.event-list {
   padding: 0;
   margin: 0;
-  max-height: calc(100vh - 158px);
-  // overflow: scroll;
+  height: calc(100vh - 70px);
+  overflow: scroll;
   font-size: 18px;
 }
 
@@ -14,13 +18,14 @@ li.event-list-item {
 li.event-list-item p {
     margin-bottom: 5px;
 }
-li.event-list-item p:first-child {
-  color: #03b421;
+
+li.event-list-item a div p:first-child {
+  color: #1e953a;
   font-weight: bold;
 }
 
 li.event-list-item a {
-  color: #03b421;
+  color: black;
 }
 
 li.event-list-item a:hover {
