@@ -8,44 +8,52 @@
 			<h4> <%= @event.address.street_address %> </h4>
   	</div>
 		<div class="three_circles hidden-xs col-sm-offset-2 col-sm-8">
-			<div class="joined_circle col-xs-2">
-				<h5>People Joined </h5> <%= @event.users.count %>
+			<div class="circle joined_circle col-xs-2">
+				<div>
+					<h5 class='circle-text'>People Joined </h5> <%= @event.users.count %>
+				</div>
 			</div>
       <%=form_tag event_path do %>
-        <div class="join-btn col-xs-2">
-					<% unless @user_event&.is_organizer %>
-	          <% if @user_event.present? %>
-	            <h5> <%= link_to "Change RSVP", event_user_event_path(@event, @user_event), method: :delete %> </h5>
-	          <% else %>
-	            <h5> <%= link_to "Join this Event", event_user_events_path(@event), method: :post %> </h5>
+        <div class="circle join-btn col-xs-2">
+					<div>
+						<% unless @user_event&.is_organizer %>
+		          <% if @user_event.present? %>
+		            <h5 class='circle-text'> <%= link_to "Change RSVP", event_user_event_path(@event, @user_event), method: :delete %> </h5>
+		          <% else %>
+		            <h5 class='circle-text'> <%= link_to "Join this Event", event_user_events_path(@event), method: :post %> </h5>
+		          <% end %>
+						<% else %>
+							<h5 class='circle-text'> <%= link_to "Edit your Event", edit_event_path(@event) %> </h5>
 	          <% end %>
-					<% else %>
-						<h5> <%= link_to "Edit your Event", edit_event_path(@event) %> </h5>
-          <% end %>
-        </div>
+					</div>
+	      </div>
       <% end %>
-			<div class="litter_items_circle col-xs-2">
-				<h5>Litter Items </h5> 24
+			<div class="circle litter_items_circle col-xs-2">
+				<div>
+					<h5 class='circle-text'>Litter Items </h5> <%= @event.litters.length %>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="summary">
-		<h3 class="col-xs-12 col-sm-offset-2 col-sm-10"> <%= @event.title %> </h3>
-		<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
-			<h4 class="black_color"> <span style="color:#03b421">Date:</span> <%= @event.planned_date %> </h4>
-			<h4 class="black_color"> <span style="color:#03b421">Time:</span> <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
-			<h4 class="black_color"> <span style="color:#03b421">Location:</span> <%= @event.address.street_address %> </h4>
-			<br>
-			<h4 class="black_color"> <span style="color:#03b421">Number of reported litter in the area:</span> 24 </h4>
-			<h4 class="black_color"> <span style="color:#03b421">Number of people that have joined so far:</span> <%= @event.users.count %> </h4>
-		</div>
-		<div class="summary_right col-xs-12 col-sm-6">
-			<h4 class="green_color"> Organizer of this event: <span style="font-weight:bold; color:black"> <%= @event.organizers.first.user.full_name %> </span> </h4>
-			<h5 class="black_color"> <span style="color:#03b421">Email organizer:</span> <%= @event.organizers.first.user.email %> </h5>
-			<br>
-			<h4 style="margin:0px;"> Notes from the organizer:</h4>
-			<p id="notes"> <%= @event.notes %> </p>
+		<div>
+			<h3 class="col-xs-12 col-sm-offset-2 col-sm-10"> <%= @event.title %> </h3>
+			<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
+				<h4 class="black_color"> <span style="color:#03b421">Date:</span> <%= @event.planned_date %> </h4>
+				<h4 class="black_color"> <span style="color:#03b421">Time:</span> <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
+				<h4 class="black_color"> <span style="color:#03b421">Location:</span> <%= @event.address.street_address %> </h4>
+				<br>
+				<h4 class="black_color"> <span style="color:#03b421">Number of reported litter in the area:</span> <%= @event.litters.length %></h4>
+				<h4 class="black_color"> <span style="color:#03b421">Number of people that have joined:</span> <%= @event.users.count %> </h4>
+			</div>
+			<div class="summary_right col-xs-12 col-sm-6">
+				<h4 class="green_color"> Organizer of this event: <span style="font-weight:bold; color:black"> <%= @event.organizers.first.user.full_name %> </span> </h4>
+				<h5 class="black_color"> <span style="color:#03b421">Email organizer:</span> <%= @event.organizers.first.user.email %> </h5>
+				<br>
+				<h4 style="margin:0px;"> Notes from the organizer:</h4>
+				<p id="notes"> <%= @event.notes %> </p>
+			</div>
 		</div>
 	</div>
 
@@ -53,24 +61,18 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<% @litter_image_urls.each_with_index do |img_url, index| %>
+					<li data-target="#myCarousel" data-slide-to="<%=index %>" class="<%='active' if index == 0%>"></li>
+				<% end %>
 			</ol>
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<%= image_tag('/uploads/litter/image/238/litter10.jpg', :class => "carousel1")%>
+				<% @litter_image_urls.each_with_index do |img_url, index| %>
+					<div class="<%= index == 0 ? 'item active' : 'item'%>">
+						<%= image_tag(img_url, :class => "carousel1")%>
 					</div>
-
-				<div class="item">
-					<%= image_tag('/uploads/litter/image/239/litter8.jpg', :class => "carousel1")%>
-				</div>
-
-				<div class="item">
-					<%= image_tag('/uploads/litter/image/244/litter19.jpg', :class => "carousel1")%>
-				</div>
+				<% end %>
 			</div>
 
 			<!-- Left and right controls -->

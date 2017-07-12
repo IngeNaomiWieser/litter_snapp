@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def show
     @user_event = @event.user_events.find_by(user: current_user)
+    @litter_image_urls = @event.litters.map{|l| l.image.large.url}
   end
 
   def create
