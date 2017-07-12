@@ -1,0 +1,57 @@
+<div class="container">
+  <br><br><br><br><br>
+  <h1 class="col-xs-12 col-sm-offset-2 col-sm-8">Sign in please</h1>
+
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 sign_in_form">
+    <br>
+    <%= form_for(setup_user(@user)) do |f|  %>
+      <div class="form-group">
+        <%= f.text_field :first_name, placeholder: 'First name', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :last_name, placeholder: 'Last name', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form-control' %>
+      </div>
+      <%= f.fields_for :address do |ff| %>
+        <div class="form-group">
+          <%= ff.text_field :line_1, placeholder: 'Line 1', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= ff.text_field :postal_code, placeholder: 'Postal code', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= ff.text_field :city, placeholder: 'City', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= ff.select(:province, options_for_select([
+            ['Alberta (AB)', 'AB'],
+            ['British Columbia (BC)', 'BC'],
+            ['Manitoba (MB)', 'MB'],
+            ['New Brunswick (NB)', '(NB)'],
+            ['Newfoundland and Labrador (NL)', 'NL'],
+            ['NorthWest Territories (NT)', 'NT'],
+            ['Nova Scotia (NS)', 'NS'],
+            ['Nunavut (NU)', 'NU'],
+            ['Ontario (ON)', 'ON'],
+            ['Prince Edward Island (PE)', 'PE'],
+            ['Quebec (QC)', 'QC'],
+            ['Saskatchewan (SK)', 'SK'],
+            ['Yukon (YT)', 'YT']], 'BC')) %>
+        </div>
+        <div class="form-group">
+          <%= ff.text_field :country, value: 'Canada', class: 'form-control' %>
+        </div>
+      <% end %>
+      <br>
+      <%= f.submit class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

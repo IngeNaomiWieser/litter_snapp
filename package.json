@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "postinstall": "cd client && yarn install",
+    "start": "foreman start -f Procfile.dev"
+  },
+  "name": "Litter_SnApp",
+  "private": true,
+  "dependencies": {}
+}
