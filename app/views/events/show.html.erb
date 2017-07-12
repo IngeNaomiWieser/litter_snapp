@@ -40,16 +40,16 @@
 		<div>
 			<h3 class="col-xs-12 col-sm-offset-2 col-sm-10"> <%= @event.title %> </h3>
 			<div class="summary_left col-xs-12 col-sm-offset-2 col-sm-4">
-				<h4 class="black_color"> <span style="color:#03b421">Date:</span> <%= @event.planned_date %> </h4>
-				<h4 class="black_color"> <span style="color:#03b421">Time:</span> <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
-				<h4 class="black_color"> <span style="color:#03b421">Location:</span> <%= @event.address.street_address %> </h4>
+				<h4 class="black_color"> <span style="color:#1e953a">Date:</span> <%= @event.planned_date %> </h4>
+				<h4 class="black_color"> <span style="color:#1e953a">Time:</span> <%= @event.planned_time.to_time.utc.strftime("%H:%M") %></h4>
+				<h4 class="black_color"> <span style="color:#1e953a">Location:</span> <%= @event.address.street_address %> </h4>
 				<br>
-				<h4 class="black_color"> <span style="color:#03b421">Number of reported litter in the area:</span> <%= @event.litters.length %></h4>
-				<h4 class="black_color"> <span style="color:#03b421">Number of people that have joined:</span> <%= @event.users.count %> </h4>
+				<h4 class="black_color"> <span style="color:#1e953a">Number of reported litter in the area:</span> <%= @event.litters.length %></h4>
+				<h4 class="black_color"> <span style="color:#1e953a">Number of people that have joined:</span> <%= @event.users.count %> </h4>
 			</div>
 			<div class="summary_right col-xs-12 col-sm-6">
 				<h4 class="green_color"> Organizer of this event: <span style="font-weight:bold; color:black"> <%= @event.organizers.first.user.full_name %> </span> </h4>
-				<h5 class="black_color"> <span style="color:#03b421">Email organizer:</span> <%= @event.organizers.first.user.email %> </h5>
+				<h5 class="black_color"> <span style="color:#1e953a">Email organizer:</span> <%= @event.organizers.first.user.email %> </h5>
 				<br>
 				<h4 style="margin:0px;"> Notes from the organizer:</h4>
 				<p id="notes"> <%= @event.notes %> </p>
