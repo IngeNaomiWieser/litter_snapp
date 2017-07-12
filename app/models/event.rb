@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   has_one :address, dependent: :destroy
   has_many :user_events, dependent: :destroy
   has_many :users, through: :user_events
+  has_many :event_litters, dependent: :destroy
+  has_many :litters, through: :event_litters
 
   accepts_nested_attributes_for :location
 
@@ -12,6 +14,7 @@ class Event < ApplicationRecord
   end
 
   before_save :reverse_geocode, if: 'can_reverse_geocode?'  # auto-fetch address
+  after_save :associate_litter
 
   private
   def can_reverse_geocode?
@@ -33,5 +36,13 @@ class Event < ApplicationRecord
       country: result[6] ? result[6]['long_name'] : 'Canada'
     )
     self.title ||= "Clean Up Event at #{self.address.street_address}"
+  end
+
+  def associate_litter
+    litter_locs = Location.joins(:litter)
+                          .where(litters: {cleaned: [nil, false]})
+                          .near([self.location.latitude, self.location.longitude], 1.5, units: :km)
+
+    litter_locs.each{|l| EventLitter.create(litter_id: l.litter_id, event_id: self.id)}
   end
 end
