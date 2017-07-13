@@ -59,12 +59,14 @@ export default class Map extends Component {
       });
     });
 
-    this.homeMarker = new google.maps.Marker({
-      position: {lat: this.props.user_location.latitude, lng: this.props.user_location.longitude},
-      map: this.googleMap,
-      icon: home_icon,
-      zIndex: 10
-    });
+    if(this.props.user_location){
+      this.homeMarker = new google.maps.Marker({
+        position: {lat: this.props.user_location.latitude, lng: this.props.user_location.longitude},
+        map: this.googleMap,
+        icon: home_icon,
+        zIndex: 10
+      });
+    }
 
     this.setState({ google_map: this.googleMap });
   }
